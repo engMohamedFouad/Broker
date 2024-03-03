@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Configurations\**" />
+    <EmbeddedResource Remove="Configurations\**" />
+    <None Remove="Configurations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="4.2.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\PCFSoftware.Infrastructure.Builders\Broker.Infrastructure.Builders.csproj" />
+    <ProjectReference Include="..\..\..\Shared\PCFSoftware.Infrastructure\Broker.Infrastructure.csproj" />
+    <ProjectReference Include="..\PCFSoftware.Data\Broker.AuthenticationAndAuthorization.Data.csproj" />
+    <ProjectReference Include="..\PCFSoftware.Infrustructure\Broker.AuthenticationAndAuthorization.Infrustructure.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Features\IndicatorsDetails\**" />
+    <EmbeddedResource Remove="Features\IndicatorsDetails\**" />
+    <None Remove="Features\IndicatorsDetails\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.8.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.1" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\PCFSoftware.Core\Pinnacle.Core.csproj" />
+    <ProjectReference Include="..\Pinnacle.Plans.Data\Pinnacle.Plans.Data.csproj" />
+    <ProjectReference Include="..\Pinnacle.Plans.Infrastructure\Pinnacle.Plans.Infrastructure.csproj" />
+    <ProjectReference Include="..\Pinnacle.Plans.Service\Pinnacle.Plans.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\SystemLogs\Queries\Results\" />
+  </ItemGroup>
+
+</Project>

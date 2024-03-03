@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\PCFSoftware\Broker.Common.csproj" />
+    <ProjectReference Include="..\PCFSoftware.Core\Broker.AuthenticationAndAuthorization.Core.csproj" />
+  </ItemGroup>
+
+</Project>
