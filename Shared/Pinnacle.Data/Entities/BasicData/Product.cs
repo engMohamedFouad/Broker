@@ -19,11 +19,7 @@ namespace Broker.Data.Entities.BasicData
         public string UserId { get; set; }
         public string Unit { get; set; }
         public bool ISPermited { get; set; }
-        public string ChangeLangDescription(string lang = "ar")
-        {
 
-            return AAITHelper.HelperMsg.creatMessage(lang, DescriptionAr, DescriptionEn);
-        }
         [ForeignKey(nameof(WholeSalerCategoriesId))]
         public virtual WholeSalerCategories WholeSalerCategory { get; set; }
         public virtual ICollection<ProductImg> ProductImgs { get; set; }

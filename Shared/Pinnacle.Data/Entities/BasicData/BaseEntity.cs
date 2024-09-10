@@ -10,11 +10,5 @@ namespace Broker.Data.Entities.BasicData
         public string NameEn { get; set; } = "";
         public bool IsActive { get; set; }
         public DateTime Date { get; set; }
-        public string ChangeLangName(string lang = "ar")
-        {
-
-            return AAITHelper.HelperMsg.creatMessage(lang, NameAr, NameEn);
-        }
-
     }
 }

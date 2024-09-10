@@ -1,14 +1,14 @@
-﻿using EntityFrameworkCore.EncryptColumn.Interfaces;
-using EntityFrameworkCore.EncryptColumn.Util;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using Broker.AuthenticationAndAuthorization.Data.Helpers;
+﻿using Broker.AuthenticationAndAuthorization.Data.Helpers;
 using Broker.AuthenticationAndAuthorization.Data.Results;
 using Broker.AuthenticationAndAuthorization.Infrustructure.Abstracts;
 using Broker.AuthenticationAndAuthorization.Service.Abstracts;
 using Broker.Data.Entities.Identity;
 using Broker.Infrustructure.Context;
+using EntityFrameworkCore.EncryptColumn.Interfaces;
+using EntityFrameworkCore.EncryptColumn.Util;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -22,7 +22,7 @@ namespace Broker.AuthenticationAndAuthorization.Service.Implementations
         private readonly IRefreshTokenRepository _refreshTokenRepository;
         private readonly UserManager<User> _userManager;
         private readonly IEmailsService _emailsService;
-        private readonly ApplicationDBContext _applicationDBContext;
+        private readonly ApplicationDbContext _applicationDBContext;
         private readonly IEncryptionProvider _encryptionProvider;
         #endregion 
 
@@ -31,7 +31,7 @@ namespace Broker.AuthenticationAndAuthorization.Service.Implementations
                                      IRefreshTokenRepository refreshTokenRepository,
                                      UserManager<User> userManager,
                                      IEmailsService emailsService,
-                                     ApplicationDBContext applicationDBContext)
+                                     ApplicationDbContext applicationDBContext)
         {
             _jwtSettings = jwtSettings;
             _refreshTokenRepository = refreshTokenRepository;

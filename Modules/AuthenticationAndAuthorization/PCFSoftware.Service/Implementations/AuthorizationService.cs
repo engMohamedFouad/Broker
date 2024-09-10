@@ -1,12 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Broker.AuthenticationAndAuthorization.Data.DTOs;
+﻿using Broker.AuthenticationAndAuthorization.Data.DTOs;
 using Broker.AuthenticationAndAuthorization.Data.Requests;
 using Broker.AuthenticationAndAuthorization.Data.Results;
 using Broker.AuthenticationAndAuthorization.Infrustructure.Abstracts;
 using Broker.AuthenticationAndAuthorization.Service.Abstracts;
 using Broker.Data.Entities.Identity;
 using Broker.Infrustructure.Context;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System.Security.Claims;
 namespace Broker.AuthenticationAndAuthorization.Service.Implementations
@@ -17,14 +17,14 @@ namespace Broker.AuthenticationAndAuthorization.Service.Implementations
         #region Fields
         private readonly RoleManager<Role> _roleManager;
         private readonly UserManager<User> _userManager;
-        private readonly ApplicationDBContext _dbContext;
+        private readonly ApplicationDbContext _dbContext;
         private readonly IUserPermissionsRepository _userPermissionsRepository;
         private readonly IRolePermissionsRepository _rolePermissionsRepository;
         #endregion
         #region Constructors
         public AuthorizationService(RoleManager<Role> roleManager,
                                     UserManager<User> userManager,
-                                    ApplicationDBContext dbContext,
+                                    ApplicationDbContext dbContext,
                                     IUserPermissionsRepository userPermissionsRepository,
                                     IRolePermissionsRepository rolePermissionsRepository)
         {

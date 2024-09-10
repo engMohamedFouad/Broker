@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Broker.Infrustructure.Context;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
-using Broker.Infrustructure.Context;
 
 namespace Broker.Infrustructure.InfrastructureBases
 {
@@ -8,12 +8,12 @@ namespace Broker.Infrustructure.InfrastructureBases
     {
         #region Vars / Props
 
-        protected readonly ApplicationDBContext _dbContext;
+        protected readonly ApplicationDbContext _dbContext;
 
         #endregion
 
         #region Constructor(s)
-        public GenericRepositoryAsync(ApplicationDBContext dbContext)
+        public GenericRepositoryAsync(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
         }

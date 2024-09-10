@@ -34,7 +34,6 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
 #region Dependency injections
 
 builder.Services.AddAuthenticationAndAuthorizationDependencies()
-                .AddPlansDependencies()
                 .AddServiceRegisteration(builder.Configuration)
                 .AddSharedModulesExtentions();
 

@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Broker.AuthenticationAndAuthorization.Service.Abstracts;
+﻿using Broker.AuthenticationAndAuthorization.Service.Abstracts;
 using Broker.Data.Entities.Identity;
 using Broker.Infrustructure.Context;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Broker.AuthenticationAndAuthorization.Service.Implementations
 {
@@ -13,14 +13,14 @@ namespace Broker.AuthenticationAndAuthorization.Service.Implementations
         private readonly UserManager<User> _userManager;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IEmailsService _emailsService;
-        private readonly ApplicationDBContext _applicationDBContext;
+        private readonly ApplicationDbContext _applicationDBContext;
         private readonly IUrlHelper _urlHelper;
         #endregion
         #region Constructors
         public ApplicationUserService(UserManager<User> userManager,
                                       IHttpContextAccessor httpContextAccessor,
                                       IEmailsService emailsService,
-                                      ApplicationDBContext applicationDBContext,
+                                      ApplicationDbContext applicationDBContext,
                                       IUrlHelper urlHelper)
         {
             _userManager = userManager;

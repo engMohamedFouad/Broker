@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Broker.AuthenticationAndAuthorization.Infrustructure.Abstracts;
+﻿using Broker.AuthenticationAndAuthorization.Infrustructure.Abstracts;
 using Broker.Data.Entities.Identity;
 using Broker.Infrustructure.Context;
 using Broker.Infrustructure.InfrastructureBases;
+using Microsoft.EntityFrameworkCore;
 
 namespace Broker.AuthenticationAndAuthorization.Infrustructure.Repositories
 {
@@ -13,7 +13,7 @@ namespace Broker.AuthenticationAndAuthorization.Infrustructure.Repositories
         #endregion
 
         #region Constructors
-        public RefreshTokenRepository(ApplicationDBContext dbContext) : base(dbContext)
+        public RefreshTokenRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
             userRefreshToken=dbContext.Set<UserRefreshToken>();
         }

@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Broker.AuthenticationAndAuthorization.Infrustructure.Abstracts;
+﻿using Broker.AuthenticationAndAuthorization.Infrustructure.Abstracts;
 using Broker.Data.Entities.Identity;
 using Broker.Infrustructure.Context;
 using Broker.Infrustructure.InfrastructureBases;
+using Microsoft.EntityFrameworkCore;
 
 namespace Broker.AuthenticationAndAuthorization.Infrustructure.Repositories
 {
@@ -12,7 +12,7 @@ namespace Broker.AuthenticationAndAuthorization.Infrustructure.Repositories
         private DbSet<UserPermissions> UserPermissions { get; set; }
         #endregion
         #region Constructor
-        public UserPermissionsRepository(ApplicationDBContext applicationDBContext) : base(applicationDBContext)
+        public UserPermissionsRepository(ApplicationDbContext applicationDBContext) : base(applicationDBContext)
         {
             UserPermissions = applicationDBContext.Set<UserPermissions>();
         }

@@ -1,13 +1,13 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Broker.AuthenticationAndAuthorization.Data.Helpers;
+using Broker.Data.Entities.Identity;
+using Broker.Infrustructure.Context;
+using Broker.Infrustructure.InfrastructureBases;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using Broker.AuthenticationAndAuthorization.Data.Helpers;
-using Broker.Data.Entities.Identity;
-using Broker.Infrustructure.Context;
-using Broker.Infrustructure.InfrastructureBases;
 using System.Text;
 
 namespace Broker.Infrastructure.Builders
@@ -41,7 +41,7 @@ namespace Broker.Infrastructure.Builders
                 option.User.RequireUniqueEmail = true;
                 option.SignIn.RequireConfirmedEmail = true;
 
-            }).AddEntityFrameworkStores<ApplicationDBContext>().AddDefaultTokenProviders();
+            }).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
             //JWT Authentication
             var jwtSettings = new JwtSettings();
